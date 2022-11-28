@@ -6,7 +6,7 @@ let userName = prompt("What is your name?")
 let logInEmail = prompt ("Please, enter your email address")
 let logInPassword = prompt ("Your password?")
 
-//usuario y contraseña coinciden con base de datos
+//verificación si usuario y contraseña coinciden con base de datos con estructura condicional
 
 const signIn = (logInEmail, logInPassword) => {
         if (logInEmail === userEmail && logInPassword === password){
@@ -24,7 +24,7 @@ const signIn = (logInEmail, logInPassword) => {
 
 signIn (logInEmail, logInPassword)
 
-//Email válido
+//Verificación si el email es válido (contiene arroba) con un bucle
 
 const validEmail = (logInEmail) => {
     let itIsAnEmail = false
@@ -40,7 +40,7 @@ const validEmail = (logInEmail) => {
 
 validEmail (logInEmail)
 
-//Es segura la contraseña? 
+//Verificación de si la contraseña es segura con estructura condicional y posibilidad de cambiar el valor de la variable con anidamiento de condicionales.
 
 const safePassword = (logInPassword) => {
     logInPassword = prompt ("Please re enter your password")
@@ -62,7 +62,7 @@ const safePassword = (logInPassword) => {
 
 safePassword (logInPassword)
 
-//La contraseña tiene numeros?
+//Verificación de si la contraseña contiene números con método test dentro de un bucle
 
 const passwordWithNumbers = (logInPassword) =>{
     let itHasNumbers = false
