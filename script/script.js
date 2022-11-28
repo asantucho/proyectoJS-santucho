@@ -6,7 +6,7 @@ let userName = prompt("What is your name?")
 let logInEmail = prompt ("Please, enter your email address")
 let logInPassword = prompt ("Your password?")
 
-
+//usuario y contraseña coinciden con base de datos
 
 const signIn = (logInEmail, logInPassword) => {
         if (logInEmail === userEmail && logInPassword === password){
@@ -24,7 +24,7 @@ const signIn = (logInEmail, logInPassword) => {
 
 signIn (logInEmail, logInPassword)
 
-
+//Email válido
 
 const validEmail = (logInEmail) => {
     let itIsAnEmail = false
@@ -35,10 +35,45 @@ const validEmail = (logInEmail) => {
         } else {
             logInEmail = prompt("Please enter a valid email - must contain @")
         }
-    }
+    } alert ("You entered a valid email successfully!")
 }
 
 validEmail (logInEmail)
 
+//Es segura la contraseña? 
 
+const safePassword = (logInPassword) => {
+    logInPassword = prompt ("Please re enter your password")
+    let question = null 
+    if (logInPassword.length >= 8){
+        alert ("Your password is safe!")
+    } else {
+        question = (prompt("Your password is not safe. Would you like to change it? Answer with yes or no")).toLowerCase()
+            if (question === "yes"){
+                logInPassword = prompt("Enter your new password")
+                alert ("Your password was successfully changed!")
+            } else if (question === "no"){
+                alert ("Ok. We won't change your password.")
+            } else {
+                alert("That is not a valid answer")
+            }
+        }
+    }
 
+safePassword (logInPassword)
+
+//La contraseña tiene numeros?
+
+const passwordWithNumbers = (logInPassword) =>{
+    let itHasNumbers = false
+    logInPassword = prompt("Please re enter your password")
+    while (itHasNumbers === false){
+        if (/[0-9]/.test(logInPassword)){
+            itHasNumbers = true
+        } else {
+            logInPassword = prompt("Enter your new password. REMEMBER to include at least one number")
+        } 
+    } alert ("Your password was successfully changed!")
+}
+
+passwordWithNumbers(logInPassword)
