@@ -40,7 +40,7 @@ const validEmail = (logInEmail) => {
 
 validEmail (logInEmail)
 
-//Verificación de si la contraseña es segura con estructura condicional y posibilidad de cambiar el valor de la variable con anidamiento de condicionales.
+//Verificación de si la contraseña es segura (siendo el criterio si tiene 8 caracteres o más) con estructura condicional y posibilidad de cambiar el valor de la variable con anidamiento de condicionales.
 
 const safePassword = (logInPassword) => {
     logInPassword = prompt ("Please re enter your password")
