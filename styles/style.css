@@ -1,8 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Bitter&family=Domine&family=Dosis&family=Inter&display=swap");
 * {
   margin: 0;
   padding: 0;
 }
 
+body {
+  font-family: "Sudo Pro Classic Light";
+  font-size: 100%;
+}
+
+body main h1 {
+  margin-left: 3%;
+  padding: 1%;
+}
+body main h2 {
+  margin-left: 3%;
+  padding: 1%;
+}
+body main .grid-mine {
+  padding: 1%;
+  margin: 0%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 15vw);
+  grid-template-rows: 0.2fr 2fr;
+  grid-template-areas: "item-1 item-1 item-1 item-1 item-1" "item-2 item-3 item-4 item-5 item-6";
+  gap: 3%;
+  justify-content: center;
+  justify-items: center;
+}
+body main .grid-mine h3 {
+  font-size: 300%;
+}
+body main .grid-mine .item:hover {
+  transform: scale(1.3);
+  transition: all 0.3s ease;
+}
+body main .grid-mine .item-1 {
+  grid-area: item-1;
+  margin-top: 1.5%;
+  margin-bottom: 1.5%;
+}
+body main .grid-mine .item-2 {
+  width: 80%;
+  grid-area: item-2;
+}
+body main .grid-mine .item-3 {
+  width: 80%;
+  grid-area: item-3;
+}
+body main .grid-mine .item-4 {
+  width: 80%;
+  grid-area: item-4;
+}
+body main .grid-mine .item-5 {
+  width: 80%;
+  grid-area: item-5;
+}
+body main .grid-mine .item-6 {
+  width: 80%;
+  grid-area: item-6;
+}
+
+@font-face {
+  font-family: "Dosis" sans-serif;
+  src: url "https://fonts.googleapis.com/css2?family=Bitter&family=Domine&family=Dosis&family=Inter&display=swap";
+}
+@font-face {
+  font-family: "Sudo Pro Classic Light";
+  src: url(../fonts/Sugo-Pro-Classic-Light-trial.ttf);
+}
 body header nav {
   background-color: #F15D25;
   width: 100%;
