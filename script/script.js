@@ -78,37 +78,143 @@
 
 // passwordWithNumbers(logInPassword)
 
-function Movie (name, typeOfProduct, durationInMinutes, director, releaseYear, genre, availableToDownload){
-    this.name = name;
+
+
+
+// El proyecto será de un sitio de películas y series para ver. En este sentido, cree un objeto por cada película y serie disponible en el catálogo. Dichos objetos estarán luego dentro de arrays.
+
+//Películas.Array con objetos instanciados dentro
+
+let films = [
+    {title: "titanic", 
+    typeOfProduct: "movie", 
+    durationInMinutes: 194, 
+    director: "james cameron", 
+    releaseYear: 1998, 
+    genre: "drama", 
+    availableToDownload: true
+    }, 
+    {title: "avengers", 
+    typeOfProduct: "movie", 
+    durationInMinutes: 149, 
+    director: "anthony and joe russo", 
+    releaseYear: 2018, genre: "action", 
+    availableToDownload: false
+    }, 
+    {title: "big fish", 
+    typeOfProduct: "movie", 
+    durationInMinutes: 144, 
+    director: "tim burton", 
+    releaseYear: 2010, 
+    genre: "fantasy", 
+    availableToDownload: true
+    }, 
+    {title: "black swan", 
+    typeOfProduct: "movie", 
+    durationInMinutes: 107, 
+    director: "darren aronofsky", 
+    releaseYear: 2010, 
+    genre: "thriller",
+    availableToDownload: true
+    }, 
+    {title: "the godfather", 
+    typeOfProduct: "movie", 
+    durationInMinutes: 175, 
+    director: "francis ford coppola", 
+    releaseYear: 1972, 
+    genre: "gangster", 
+    availableToDownload: false
+    }]
+
+//Series. Objetos instanciados a partir de una función y por fuera del array que luego los englobará 
+
+function Series (title, typeOfProduct, seasons, episodesPerSeason, averageDurationPerEpisodeInMinutes, genre, producer, availableToDownload){
+    this.title = title;
     this.typeOfProduct = typeOfProduct;
-    this.durationInMinutes = durationInMinutes;
-    this.director = director;
-    this.releaseYear = releaseYear;
+    this.seasons = seasons;
+    this.episodesPerSeason = episodesPerSeason;
+    this.averageDurationPerEpisodeInMinutes = averageDurationPerEpisodeInMinutes;
     this.genre = genre;
+    this.producer = producer;
     this.availableToDownload = availableToDownload;
 }
 
-const titanic = new Movie ("titanic", "movie", 194, "james cameron", 1998, "drama", true)
-const avengers = new Movie ("avengers: infinity war", "movie", 149, "anthony and joe russo", 2018, "action", false)
-const bigFish = new Movie ("big fish", "movie", 124, "tim burton", 2004, "fantasy", true)
-const blackSwan = new Movie ("black swan", "movie", 107, "darren aronofsky", 2010, "thriller", true)
-const godfather = new Movie ("the godfather", "movie", 175, "francis ford coppola", 1972, "gangster", false)
+const breakingBad = new Series ("breaking bad", "series", 5, 13, 47, "suspense", "vince gilligan", false)
+const gameOfThrones = new Series ("game of thrones", "series", 8, 10, 55, "medieval fantasy", "mark huffam", false)
+const theCrown = new Series ("the crown", "series", 5, 10, 52, "historical drama", "peter morgan", false)
+const sexAndTheCity = new Series ("sex and the city", "series", 6, 10, 27, "romantic comedy", "darren star", true)
+const succession = new Series ("succession", "series", 3, 10, 62, "black comedy-drama",  "jesse armstrong", true)
 
-const series = (title, seasons, episodesPerSeason, averageDurationPerEpisodeInMinutes, genre, producer, availableToDownload ) =>{
-    return ({
-        title : title,
-        seasons : seasons,
-        episodesPerSeason : episodesPerSeason,
-        averageDurationPerEpisodeInMinutes : averageDurationPerEpisodeInMinutes,
-        genre : genre,
-        producer : producer,
-        availableToDownload: availableToDownload,
-    })
+
+const shows = [breakingBad, gameOfThrones, theCrown, sexAndTheCity, succession]
+
+// Manipulación de arrays con métodos y funciones de orden superior
+
+// Quiero saber la CANTIDAD de productos en total con la que cuenta la página con método concat
+
+const productsTotal = films.concat(shows)
+
+console.log(productsTotal)
+
+//Ordenar las películas y series en orden alfabético
+
+const alphabeticalProductsTotal = [...productsTotal].sort((a, b) => {
+    if ( a.title < b.title ){
+        return -1
+    } else if ( a.title > b.title){
+        return 1
+    } else {
+        return 0
+    }
+})
+
+console.log(alphabeticalProductsTotal)
+
+// Buscar una película en particular con find
+
+let userWantToWatch = prompt ("What do you want to watch tonight?").toLowerCase()
+
+const thisMovie = films.find(Movie => Movie.title === userWantToWatch) 
+
+console.log(thisMovie)
+
+// Buscar qué películas y series se pueden descargar. Ver si la serie o película ingresada por el usuario se encuentra disponible para descargar
+
+const download = productsTotal.filter((element) => {
+    return element.availableToDownload === true
+})
+
+console.log (download)
+
+const canDownload = () => {
+    let wantToDownload = prompt("What show or movie do you want to download?")
+    if (download.find(product => product.title === wantToDownload)){
+        confirm("This product is available for download. Do you want to download it now?")
+    } else {
+        alert ("Sorry, this product is not available to download at the moment.")
+    }
 }
 
-const breakingBad = new series ("breaking bad", 5, 13, 47, "suspense", "vince gilligan", false)
-const gameOfThrones = new series ("game of thrones", 8, 10, 55, "medieval fantasy", "mark huffam", false)
-const theCrown = new series ("the crown", 5, 10, 52, "historical drama", "peter morgan", false)
-const sexAndTheCity = new series ("sex and the city", 6, 10, 27, "romantic comedy", "darren star", true)
-const succession = new series ("succession", 3, 10, 62, "black comedy-drama",  "jesse armstrong", true)
+canDownload()
+
+console.log(canDownload)
+
+// Creación de un nuevo array partiendo de productsTotal con método slice para no modificar el original
+
+const moviesWithSlice = productsTotal.slice (0, 5)
+
+console.log(moviesWithSlice)
+
+// Obtener cuantos productos son series con filter
+
+const howManyShows = productsTotal.filter((Series) => {
+    return Series.typeOfProduct === "series"
+})
+
+console.log(howManyShows)
+
+
+
+
+
 
