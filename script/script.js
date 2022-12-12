@@ -150,11 +150,22 @@ const shows = [breakingBad, gameOfThrones, theCrown, sexAndTheCity, succession]
 
 // Manipulación de arrays con métodos y funciones de orden superior
 
+//Agregar una nueva película al catálogo
+
+const newMovie = films.push({title: "scarface", 
+typeOfProduct: "movie", 
+durationInMinutes: 170, 
+director: "brian de palma", 
+releaseYear: 1983, 
+genre: "crime", 
+availableToDownload: true
+})
+
+
 // Quiero saber la CANTIDAD de productos en total con la que cuenta la página con método concat
 
 const productsTotal = films.concat(shows)
 
-console.log(productsTotal)
 
 //Ordenar las películas y series en orden alfabético
 
@@ -168,15 +179,13 @@ const alphabeticalProductsTotal = [...productsTotal].sort((a, b) => {
     }
 })
 
-console.log(alphabeticalProductsTotal)
 
-// Buscar una película en particular con find
+// Buscar una película o serie en particular con find
 
 let userWantToWatch = prompt ("What do you want to watch tonight?").toLowerCase()
 
-const thisMovie = films.find(Movie => Movie.title === userWantToWatch) 
+const thisProduct = productsTotal.find(product => product.title === userWantToWatch) 
 
-console.log(thisMovie)
 
 // Buscar qué películas y series se pueden descargar. Ver si la serie o película ingresada por el usuario se encuentra disponible para descargar
 
@@ -184,7 +193,6 @@ const download = productsTotal.filter((element) => {
     return element.availableToDownload === true
 })
 
-console.log (download)
 
 const canDownload = () => {
     let wantToDownload = prompt("What show or movie do you want to download?")
@@ -197,13 +205,11 @@ const canDownload = () => {
 
 canDownload()
 
-console.log(canDownload)
 
 // Creación de un nuevo array partiendo de productsTotal con método slice para no modificar el original
 
 const moviesWithSlice = productsTotal.slice (0, 5)
 
-console.log(moviesWithSlice)
 
 // Obtener cuantos productos son series con filter
 
@@ -211,7 +217,6 @@ const howManyShows = productsTotal.filter((Series) => {
     return Series.typeOfProduct === "series"
 })
 
-console.log(howManyShows)
 
 
 
