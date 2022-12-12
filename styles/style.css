@@ -9,15 +9,15 @@ body {
   font-size: 100%;
 }
 
-body main h1 {
+main h1 {
   margin-left: 3%;
   padding: 1%;
 }
-body main h2 {
+main h2 {
   margin-left: 3%;
   padding: 1%;
 }
-body main .grid-mine {
+main .grid-mine {
   padding: 1%;
   margin: 0%;
   width: 100%;
@@ -29,37 +29,48 @@ body main .grid-mine {
   justify-content: center;
   justify-items: center;
 }
-body main .grid-mine h3 {
+main .grid-mine h3 {
   font-size: 300%;
 }
-body main .grid-mine .item:hover {
+main .grid-mine .item:hover {
   transform: scale(1.3);
   transition: all 0.3s ease;
 }
-body main .grid-mine .item-1 {
+main .grid-mine .item-1 {
   grid-area: item-1;
   margin-top: 1.5%;
   margin-bottom: 1.5%;
 }
-body main .grid-mine .item-2 {
+main .grid-mine .item-2 {
   width: 80%;
   grid-area: item-2;
 }
-body main .grid-mine .item-3 {
+main .grid-mine .item-3 {
   width: 80%;
   grid-area: item-3;
 }
-body main .grid-mine .item-4 {
+main .grid-mine .item-4 {
   width: 80%;
   grid-area: item-4;
 }
-body main .grid-mine .item-5 {
+main .grid-mine .item-5 {
   width: 80%;
   grid-area: item-5;
 }
-body main .grid-mine .item-6 {
+main .grid-mine .item-6 {
   width: 80%;
   grid-area: item-6;
+}
+
+footer {
+  background-color: #F15D25;
+  display: flex;
+  flex-direction: row;
+  margin-top: 5%;
+}
+footer .f-flex {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 3%;
 }
 
 @font-face {

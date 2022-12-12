@@ -87,6 +87,7 @@
 
 let films = [
     {title: "titanic", 
+    id : 1,
     typeOfProduct: "movie", 
     durationInMinutes: 194, 
     director: "james cameron", 
@@ -95,6 +96,7 @@ let films = [
     availableToDownload: true
     }, 
     {title: "avengers", 
+    id : 2,
     typeOfProduct: "movie", 
     durationInMinutes: 149, 
     director: "anthony and joe russo", 
@@ -102,6 +104,7 @@ let films = [
     availableToDownload: false
     }, 
     {title: "big fish", 
+    id : 3,
     typeOfProduct: "movie", 
     durationInMinutes: 144, 
     director: "tim burton", 
@@ -110,6 +113,7 @@ let films = [
     availableToDownload: true
     }, 
     {title: "black swan", 
+    id : 4,
     typeOfProduct: "movie", 
     durationInMinutes: 107, 
     director: "darren aronofsky", 
@@ -118,6 +122,7 @@ let films = [
     availableToDownload: true
     }, 
     {title: "the godfather", 
+    id : 5,
     typeOfProduct: "movie", 
     durationInMinutes: 175, 
     director: "francis ford coppola", 
@@ -128,8 +133,9 @@ let films = [
 
 //Series. Objetos instanciados a partir de una función y por fuera del array que luego los englobará 
 
-function Series (title, typeOfProduct, seasons, episodesPerSeason, averageDurationPerEpisodeInMinutes, genre, producer, availableToDownload){
+function Series (title, id, typeOfProduct, seasons, episodesPerSeason, averageDurationPerEpisodeInMinutes, genre, producer, availableToDownload){
     this.title = title;
+    this.id = id;
     this.typeOfProduct = typeOfProduct;
     this.seasons = seasons;
     this.episodesPerSeason = episodesPerSeason;
@@ -139,11 +145,11 @@ function Series (title, typeOfProduct, seasons, episodesPerSeason, averageDurati
     this.availableToDownload = availableToDownload;
 }
 
-const breakingBad = new Series ("breaking bad", "series", 5, 13, 47, "suspense", "vince gilligan", false)
-const gameOfThrones = new Series ("game of thrones", "series", 8, 10, 55, "medieval fantasy", "mark huffam", false)
-const theCrown = new Series ("the crown", "series", 5, 10, 52, "historical drama", "peter morgan", false)
-const sexAndTheCity = new Series ("sex and the city", "series", 6, 10, 27, "romantic comedy", "darren star", true)
-const succession = new Series ("succession", "series", 3, 10, 62, "black comedy-drama",  "jesse armstrong", true)
+const breakingBad = new Series ("breaking bad", 6, "series", 5, 13, 47, "suspense", "vince gilligan", false)
+const gameOfThrones = new Series ("game of thrones", 7, "series", 8, 10, 55, "medieval fantasy", "mark huffam", false)
+const theCrown = new Series ("the crown", 8, "series", 5, 10, 52, "historical drama", "peter morgan", false)
+const sexAndTheCity = new Series ("sex and the city", 9, "series", 6, 10, 27, "romantic comedy", "darren star", true)
+const succession = new Series ("succession", 10, "series", 3, 10, 62, "black comedy-drama",  "jesse armstrong", true)
 
 
 const shows = [breakingBad, gameOfThrones, theCrown, sexAndTheCity, succession]
@@ -152,7 +158,8 @@ const shows = [breakingBad, gameOfThrones, theCrown, sexAndTheCity, succession]
 
 //Agregar una nueva película al catálogo
 
-const newMovie = films.push({title: "scarface", 
+const newMovie = films.push({title: "scarface",
+id : 11,  
 typeOfProduct: "movie", 
 durationInMinutes: 170, 
 director: "brian de palma", 
@@ -186,6 +193,15 @@ let userWantToWatch = prompt ("What do you want to watch tonight?").toLowerCase(
 
 const thisProduct = productsTotal.find(product => product.title === userWantToWatch) 
 
+// El usuario no sabe que ver y pide al sitio que escoja por el, con Math.random
+
+let pickForMe = () =>{
+    let randomId = Math.ceil(Math.random()*productsTotal.length)
+    console.log(randomId)
+    return productsTotal.find(product => product.id === randomId)
+}
+
+pickForMe()
 
 // Buscar qué películas y series se pueden descargar. Ver si la serie o película ingresada por el usuario se encuentra disponible para descargar
 
