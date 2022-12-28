@@ -46,6 +46,24 @@
         </nav>
     </header>
     <main>
+        <div class = "login-container">
+            <form action="" method="post" id = "login">
+                <div>
+                    <label for="nombre" class="form-label">Username</label>
+                    <input type="text" placeholder="username" id="input-username">
+                </div>
+                <div>
+                    <label for="nombre" class="form-label">Password</label>
+                    <input type="password" placeholder="password" id="input-password">
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-primary" id = "button-submit">Log in</button>
+                </div>
+            </form>
+        </div>
+        <div>
+            <p id="wrong-info">Username and/or password are incorrect!</p>
+        </div>
         <h1> Welcome username!</h1>
         <h2> What do you want watch today?</h2>
         <div class="container-mine grid-mine">
@@ -74,6 +92,7 @@
             <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, est. Voluptate nam, deleniti quasi possimus minus reiciendis dicta neque nobis? Sint nisi nesciunt distinctio voluptates! Obcaecati animi suscipit doloribus odit?</p>
         </div>
     </footer>
+    <script src = "./script/elements.js"></script>
     <script src="./script/script.js"></script>
 </body>
 </html>

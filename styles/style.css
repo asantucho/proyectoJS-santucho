@@ -9,6 +9,9 @@ body {
   font-size: 100%;
 }
 
+main div #wrong-info {
+  display: none;
+}
 main h1 {
   margin-left: 3%;
   padding: 1%;
