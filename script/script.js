@@ -45,9 +45,8 @@ const getFromLocalStorage = (key) => {
 const wrongInfo = document.querySelector("#wrong-info")
 
 formLogin.onsubmit = (event) => {
-    console.log ("anda?")
     event.preventDefault ()
-    if (inputUsername.value === users.username && inputPassword.value === users.password){
+    if (inputUsername.value === users[0].username && inputPassword.value === users[0].password){
         saveInLocalStorage("login", true)
         logInContainer.style.display = "none" 
         console.log ("esta parte esta andando")
@@ -68,3 +67,33 @@ function validateLogIn (key) {
 }
 
 validateLogIn(getFromLocalStorage("login"))
+
+//logout
+
+const logout = document.querySelector("#button-logout")
+
+logout.onclick = () => {
+    localStorage.removeItem ("login")
+    validateLogIn(getFromLocalStorage("login"))
+    formLogin.reset()
+}
+
+
+// manipulando html con dom
+
+
+function movieCatalog (films){
+    const movieContainer = document.querySelector("#my-movies")
+    films.forEach( (movie) => {
+        const card = document.createElement ("div")
+        card.className = "item"
+        card.innerHTML = `
+        <div class = "container-img">
+            <img src = ${movie.image} alt = ${movie.title}>
+            <h3>${movie.title}</h3>
+        </div>`
+        movieContainer.appendChild (card)
+    })
+}
+
+movieCatalog(films)

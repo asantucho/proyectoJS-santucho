@@ -1,6 +1,6 @@
 // El proyecto será de un sitio de películas y series para ver. En este sentido, cree un objeto por cada película y serie disponible en el catálogo. Dichos objetos estarán luego dentro de arrays.
 
-//Películas.Array con objetos instanciados dentro
+//Películas. Array con objetos instanciados dentro
 
 let films = [
     {title: "titanic", 
@@ -51,31 +51,72 @@ let films = [
     releaseYear: 1972, 
     genre: "gangster", 
     availableToDownload: false, 
-    image: "./images/the-godfather"
+    image: "./images/the-godfather.jpeg"
     }]
 
-//Series. Objetos instanciados a partir de una función y por fuera del array que luego los englobará 
+//Series
 
-function Series (title, id, typeOfProduct, seasons, episodesPerSeason, averageDurationPerEpisodeInMinutes, genre, producer, availableToDownload){
-    this.title = title;
-    this.id = id;
-    this.typeOfProduct = typeOfProduct;
-    this.seasons = seasons;
-    this.episodesPerSeason = episodesPerSeason;
-    this.averageDurationPerEpisodeInMinutes = averageDurationPerEpisodeInMinutes;
-    this.genre = genre;
-    this.producer = producer;
-    this.availableToDownload = availableToDownload;
-}
-
-const breakingBad = new Series ("breaking bad", 6, "series", 5, 13, 47, "suspense", "vince gilligan", false)
-const gameOfThrones = new Series ("game of thrones", 7, "series", 8, 10, 55, "medieval fantasy", "mark huffam", false)
-const theCrown = new Series ("the crown", 8, "series", 5, 10, 52, "historical drama", "peter morgan", false)
-const sexAndTheCity = new Series ("sex and the city", 9, "series", 6, 10, 27, "romantic comedy", "darren star", true)
-const succession = new Series ("succession", 10, "series", 3, 10, 62, "black comedy-drama",  "jesse armstrong", true)
-
-
-const shows = [breakingBad, gameOfThrones, theCrown, sexAndTheCity, succession]
+let series = [
+    {
+        title: "breaking bad",
+        id: 6,
+        typeOfProduct: "series",
+        seasons: 5,
+        episodesPerSeason: 13,
+        averageDurationPerEpisodeInMinutes: 47,
+        genre: "suspense",
+        producer: "vince gilligan",
+        availableToDownload: false, 
+        image: "./images/breaking-bad.jpg"
+    },
+    {
+        title: "game of thrones",
+        id: 7,
+        typeOfProduct: "series",
+        seasons: 8,
+        episodesPerSeason: 10,
+        averageDurationPerEpisodeInMinutes: 55,
+        genre: "medieval fantasy",
+        producer: "mark huffam",
+        availableToDownload: false, 
+        image: "./images/got.jpg"
+    },{
+        title: "the crown",
+        id: 8,
+        typeOfProduct: "series",
+        seasons: 5,
+        episodesPerSeason: 10,
+        averageDurationPerEpisodeInMinutes: 52,
+        genre: "historical drama",
+        producer: "peter morgan",
+        availableToDownload: false, 
+        image: "./images/the-crown.jpg"
+    },
+    {
+        title: "sex and the city",
+        id: 9,
+        typeOfProduct: "series",
+        seasons: 6,
+        episodesPerSeason: 10,
+        averageDurationPerEpisodeInMinutes: 27,
+        genre: "romantic comedy",
+        producer: "darren star",
+        availableToDownload: true, 
+        image: "./images/sexandthecity.jpg"
+    },
+    {
+        title: "succession",
+        id: 10,
+        typeOfProduct: "series",
+        seasons: 3,
+        episodesPerSeason: 10,
+        averageDurationPerEpisodeInMinutes: 62,
+        genre: "black comedy-drama",
+        producer: "jesse armstrong",
+        availableToDownload: true, 
+        image: "./images/succession.jpg"
+    },
+]
 
 // Manipulación de arrays con métodos y funciones de orden superior
 
@@ -96,7 +137,7 @@ image: "./images/scarface.jpg"
 
 // Quiero saber la CANTIDAD de productos en total con la que cuenta la página con método concat
 
-const productsTotal = films.concat(shows)
+const productsTotal = films.concat(series)
 
 
 //Ordenar las películas y series en orden alfabético
@@ -122,41 +163,17 @@ const alphabeticalProductsTotal = [...productsTotal].sort((a, b) => {
 
 let pickForMe = () =>{
     let randomId = Math.ceil(Math.random()*productsTotal.length)
-    console.log(randomId)
     return productsTotal.find(product => product.id === randomId)
 }
 
 pickForMe()
 
-// Buscar qué películas y series se pueden descargar. Ver si la serie o película ingresada por el usuario se encuentra disponible para descargar
+// Buscar qué películas y series se pueden descargar.
 
 const download = productsTotal.filter((element) => {
     return element.availableToDownload === true
 })
 
-
-// const canDownload = () => {
-//     //let wantToDownload = prompt("What show or movie do you want to download?")
-//     if (download.find(product => product.title === wantToDownload)){
-//         confirm("This product is available for download. Do you want to download it now?")
-//     } else {
-//         alert ("Sorry, this product is not available to download at the moment.")
-//     }
-// }
-
-//canDownload()
-
-
-// Creación de un nuevo array partiendo de productsTotal con método slice para no modificar el original
-
-const moviesWithSlice = productsTotal.slice (0, 5)
-
-
-// Obtener cuantos productos son series con filter
-
-const howManyShows = productsTotal.filter((Series) => {
-    return Series.typeOfProduct === "series"
-})
 
 
 
