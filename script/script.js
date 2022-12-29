@@ -77,6 +77,7 @@ function validateLogIn(key) {
     if (key !== true) {
         logInContainer.style.display = "block";
         logout.style.display = "none";
+        welcomeUser.textContent = `Welcome username`
     } else if (key === false) {
         wrongInfo.style.display = "block";
         wrongInfo.style.border = "1px solid red";
@@ -97,6 +98,9 @@ validateLogIn(getFromLocalStorage("login"));
 logout.onclick = () => {
     localStorage.removeItem("login");
     validateLogIn(getFromLocalStorage("login"));
+    localStorage.removeItem("username")
+
+
     formLogin.reset();
 };
 
