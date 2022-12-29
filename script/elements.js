@@ -120,21 +120,6 @@ let series = [
 
 // Manipulación de arrays con métodos y funciones de orden superior
 
-//Agregar una nueva película al catálogo
-
-const newMovie = films.push(
-{title: "scarface",
-id : 11,  
-typeOfProduct: "movie", 
-durationInMinutes: 170, 
-director: "brian de palma", 
-releaseYear: 1983, 
-genre: "crime", 
-availableToDownload: true,
-image: "./images/scarface.jpg"
-})
-
-
 // Quiero saber la CANTIDAD de productos en total con la que cuenta la página con método concat
 
 const productsTotal = films.concat(series)
@@ -151,15 +136,6 @@ const alphabeticalProductsTotal = [...productsTotal].sort((a, b) => {
         return 0
     }
 })
-
-
-// Buscar una película o serie en particular con find
-
-// let userWantToWatch = prompt ("What do you want to watch tonight?").toLowerCase()
-
-// const thisProduct = productsTotal.find(product => product.title === userWantToWatch) 
-
-// El usuario no sabe que ver y pide al sitio que escoja por el, con Math.random
 
 let pickForMe = () =>{
     let randomId = Math.ceil(Math.random()*productsTotal.length)

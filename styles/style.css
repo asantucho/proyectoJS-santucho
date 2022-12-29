@@ -10,9 +10,11 @@ body {
   background-color: aliceblue;
 }
 
-main div #wrong-info {
-  display: none;
+.dark-mode {
+  background-color: black;
+  color: white;
 }
+
 main h1 {
   margin-left: 3%;
   padding: 1%;
@@ -36,6 +38,9 @@ main .grid-mine {
 main .grid-mine h3 {
   font-size: 300%;
 }
+main .grid-mine .item {
+  width: 80%;
+}
 main .grid-mine .item:hover {
   transform: scale(1.3);
   transition: all 0.3s ease;
@@ -46,24 +51,22 @@ main .grid-mine .item-1 {
   margin-bottom: 1.5%;
 }
 main .grid-mine .item-2 {
-  width: 80%;
   grid-area: item-2;
 }
 main .grid-mine .item-3 {
-  width: 80%;
   grid-area: item-3;
 }
 main .grid-mine .item-4 {
-  width: 80%;
   grid-area: item-4;
 }
 main .grid-mine .item-5 {
-  width: 80%;
   grid-area: item-5;
 }
 main .grid-mine .item-6 {
-  width: 80%;
   grid-area: item-6;
+}
+main .grid-mine .item-7 {
+  grid-area: item-7;
 }
 
 footer {
@@ -85,6 +88,10 @@ footer .f-flex {
   font-family: "Sudo Pro Classic Light";
   src: url(../fonts/Sugo-Pro-Classic-Light-trial.ttf);
 }
+main div #wrong-info {
+  display: none;
+}
+
 body header nav {
   background-color: #F15D25;
   width: 100%;
