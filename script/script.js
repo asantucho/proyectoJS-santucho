@@ -143,6 +143,8 @@ function seriesCatalog (series){
     }))
 }
 
+seriesCatalog(series);
+
 // modo oscuro -- EVENTO ON CLICK
 
 const modes = document.querySelector("#light-dark-mode");
