@@ -5,43 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vision</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="icon" type="image/png" href="./images/ExportAsset 5@4x.png">
 </head>
 <body class = "light-mode">
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
+        <nav>
             <div class="container-fluid">
-                    <a class="navbar-brand" href="#">
-                        <img src="./images/LOGO B&N.png" alt="Logo VisiOn by Antonio Jordi Honik">
-                    </a>
-                    <button id = "light-dark-mode">DARK MODE</button>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-                            </li>
+                <a class="navbar-logo" href="#">
+                    <img src="./images/LOGO B&N.png" alt="Logo VisiOn by Antonio Jordi Honik">
+                </a>
+                <button class="button" id = "light-dark-mode">Dark mode</button>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="inline-navbar" id="navbarSupportedContent">
+                    <ul class="navbar-main">
+                        <form class="nav-item" role="search">
+                            <input class="search-control" type="search" placeholder="Search" aria-label="Search">
+                            <button class="button btn btn-outline-success" type="submit">Search</button>
+                        </form>
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">Conocenos!</a>
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Contact Us!</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Qué querés ver hoy?
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Películas</a></li>
-                                <li><a class="dropdown-item" href="#">Series</a></li>
+                            <a class="nav-link dropdown-btn" href="#">Watch</a>
+                            <ul class="dropdown-content" aria-labelledby="navbarDropdown">
+                                <li>
+                                    <a class="dropdown-item" href="#">Movies</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Series</a>
+                                </li>
                             </ul>
                         </li>
-                        </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
-                        <button class="btn btn-outline-success" type="submit">Buscar</button>
-                    </form>
+                    </ul>
                 </div>
             </div>
         </nav>
@@ -49,21 +50,21 @@
     <main>
         <div class = "login-container">
             <form action="" method="post" id = "login">
-                <div>
+                <div class="mb-3">
                     <label for="nombre" class="form-label">Username</label>
-                    <input type="text" placeholder="username" id="input-username">
+                    <input class="form-control" type="text" placeholder="username" id="input-username">
                 </div>
-                <div>
+                <div class="mb-3">
                     <label for="nombre" class="form-label">Password</label>
-                    <input type="password" placeholder="password" id="input-password">
+                    <input class="form-control" type="password" placeholder="password" id="input-password">
                 </div>
-                <div>
-                    <button type="submit" class="btn btn-primary" id = "button-submit">Log in</button>
+                <div class="mb-3">
+                    <button type="submit" class="button btn btn-primary" id = "button-submit">Log in</button>
                 </div>
             </form>
         </div>
         <div>
-            <button type="submit" class="btn btn-primary" id = "button-logout">Cerrar sesión</button>
+            <button type="submit" class="button btn btn-primary" id = "button-logout">Log Out</button>
         </div>
         <div>
             <p id="wrong-info">Username and/or password are incorrect!</p>

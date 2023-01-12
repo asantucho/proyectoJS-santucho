@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: "Sudo Pro Classic Light";
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 100%;
   background-color: aliceblue;
 }
@@ -92,15 +92,115 @@ main div #wrong-info {
   display: none;
 }
 
-body header nav {
+form .mb-3 {
+  margin-bottom: 1rem;
+  padding-left: 0%;
+  padding-right: 2%;
+  margin-left: 2%;
+}
+form .mb-3 .form-label {
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+}
+form .mb-3 .form-control {
+  display: block;
+  width: 50%;
+  padding: 0.375rem 0.75rem 0.375rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: black;
+  background-color: aliceblue;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+form .mb-3 .form-control:focus {
+  transform: scale(1.03);
+  border: 1px solid black;
+}
+
+.button {
+  display: inline-block;
+  font-weight: bold;
+  line-height: 1.5;
+  text-align: right;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  color: #ced4da;
+  background-color: #022444;
+  border-color: black;
+}
+
+nav {
   background-color: #F15D25;
   width: 100%;
   height: 15vh;
 }
-body header nav div .navbar-collapse {
-  flex-grow: 0;
-}
-body header nav div a img {
+nav .container-fluid .navbar-logo img {
   height: 5%;
+  width: 15%;
+}
+nav .container-fluid div {
+  right: 10%;
+}
+nav .container-fluid div ul {
+  list-style-type: none;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  padding: 0.5%;
+  margin-left: 40%;
+  margin-right: 2%;
+}
+nav .container-fluid div ul .nav-item {
+  display: inline;
+  width: 5vw;
+}
+nav .container-fluid div ul .nav-item .search-control {
   width: 20%;
-}/*# sourceMappingURL=style.css.map */
+  padding: 0.375rem 0.75rem 0.375rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: black;
+  background-color: aliceblue;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.dropdown-btn {
+  position: relative;
+}
+
+.dropdown-content {
+  position: absolute;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+}
+
+.dropdown-btn:focus .dropdown-content {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/*.dropdown-btn:focus .dropdown-content {
+    opacity: none;
+}*//*# sourceMappingURL=style.css.map */

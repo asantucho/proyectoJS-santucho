@@ -156,3 +156,4 @@ modes.onclick = () => {
         modes.textContent = "Dark mode";
     }
 };
+
