@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vision</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="icon" type="image/png" href="./images/ExportAsset 5@4x.png">
 </head>
@@ -24,24 +25,16 @@
                     </li>
                     <li class="nav-item" role="search">
                         <input class="search-control" type="search" placeholder="Search" aria-label="Search">
-                        <button class="button btn btn-outline-success" type="submit">Search</button>
+                        <button class="button btn btn-outline-success" type="submit" id="search-btn">Search</button>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="#" id="home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Contact Us!</a>
+                        <a class="nav-link active" href="#" id="my-favorites">My favorites</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-btn" href="#">Watch</a>
-                        <ul class="dropdown-content" aria-labelledby="navbarDropdown">
-                            <li>
-                                <a class="dropdown-item" href="#">Movies</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#">Series</a>
-                            </li>
-                        </ul>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" id="contact-us">Contact Us!</a>
                     </li>
                 </ul>
             </div>
@@ -61,6 +54,9 @@
                     </div>
                     <div class="mb-3">
                         <button type="submit" class="button btn btn-primary" id = "button-submit">Log in</button>
+                        <div>
+                            <p id="wrong-info">Username and/or password are incorrect!</p>
+                        </div>
                     </div>
                 </div>
             </form>
@@ -68,19 +64,24 @@
         <div>
             <button type="submit" class="button btn btn-primary" id = "button-logout">Log Out</button>
         </div>
-        <div>
-            <p id="wrong-info">Username and/or password are incorrect!</p>
-        </div>
         <div class="web-container">
             <h1> Welcome username!</h1>
-            <h2> What do you want watch today?</h2>
-            <div class = "container-mine grid-mine" id = "my-movies">
-                <h3 class = "item-1">Movies</h3>
+            <h2> What do you want to watch today?</h2>
+            <div class="swiper mySwiper">
+                <h3>Movies</h3>
+                <div class = "container-mine flex-mine swiper-wrapper" id = "my-movies"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
             </div>
             <hr>
-            <div class="container-mine grid-mine" id = "my-series">
-                <h3 class="item-1">Series</h3>
-            </div>  
+            <div class="swiper mySwiper">
+                <h3>Series</h3>
+                <div class="container-mine grid-mine swiper-wrapper" id = "my-series"></div>  
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
         </div>    
         <footer>
         <div class="f-flex">
@@ -90,7 +91,11 @@
             <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, est. Voluptate nam, deleniti quasi possimus minus reiciendis dicta neque nobis? Sint nisi nesciunt distinctio voluptates! Obcaecati animi suscipit doloribus odit?</p>
         </div>
     </footer>
-    <script src = "./script/elements.js"></script>
-    <script src="./script/script.js"></script>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src = "./script/login.js"></script>
+    <script src="./script/darkmode.js"></script>
+    <script src="./script/dom-api.js"></script>
 </body>
 </html>
