@@ -189,4 +189,8 @@ nav .navbar-container ul .nav-item .search-control {
 main .favorites-container {
   display: flex;
   flex-wrap: wrap;
+}
+
+.icon {
+  filter: opacity(1);
 }/*# sourceMappingURL=style.css.map */
