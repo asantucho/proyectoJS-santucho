@@ -16,10 +16,7 @@
             <a class="navbar-logo" href="#">
                 <img src="./images/LOGO B&N.png" alt="Logo VisiOn by Antonio Jordi Honik">
             </a>
-            <!--<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button> -->
-            <div class="navbar-container">
+                <div class="navbar-container">
                 <ul class="navbar-main">
                     <li class="nav-item">
                         <button class="button" id = "light-dark-mode">Dark mode</button>
@@ -36,6 +33,11 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="#" id="contact-us">Contact Us!</a>
+                    </li>
+                    <li>
+                        <div>
+                            <button type="submit" class="button btn btn-primary" id = "button-logout">Log Out</button>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -62,9 +64,6 @@
                 </div>
             </form>
         </div>
-        <div>
-            <button type="submit" class="button btn btn-primary" id = "button-logout">Log Out</button>
-        </div>
         <div class="web-container">
             <h1> Welcome username!</h1>
             <h2> What do you want to watch today?</h2>
@@ -84,9 +83,10 @@
                 <div class="swiper-pagination"></div>
             </div>
         </div>
-        <div class="favorites-container">
+        <div>
             <h3>Want to watch list - My favorites</h3>
             <button class="remove-all-favs">REMOVE ALL FAVORITES</button>
+            <div class="favorites-container"></div>
         </div>  
     </main>
     <footer>

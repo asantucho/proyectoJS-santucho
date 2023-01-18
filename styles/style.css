@@ -186,9 +186,24 @@ nav .navbar-container ul .nav-item .search-control {
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-main .favorites-container {
+main div h3 {
+  display: block;
+}
+main div .remove-all-favs {
+  display: block;
+}
+main div .favorites-container {
   display: flex;
   flex-wrap: wrap;
+  margin: 5%;
+}
+main div .favorites-container .favorite-card {
+  width: 13%;
+  margin: 1%;
+  padding: 0.5%;
+}
+main div .favorites-container .favorite-card img {
+  width: 100%;
 }
 
 .icon {

@@ -44,7 +44,7 @@ const seriesToHtml = (array) => {
         const card = document.createElement("div");
         card.className = "swiper-slide";
         card.innerHTML = `
-        <img src = "https://image.tmdb.org/t/p/original${series.poster_path}" alt = "${series.title}">
+        <img src = "https://image.tmdb.org/t/p/original${series.poster_path}" alt = "${series.name}">
         <button class = "button-fav-series" id = "button-${series.id}">Add to Favorites </button>`
         seriesContainer.appendChild(card);
     });
