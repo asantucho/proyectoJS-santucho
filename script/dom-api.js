@@ -21,7 +21,7 @@ const moviesToHtml = (array) => {
         card.className = "swiper-slide";
         card.innerHTML = `
         <img src = "https://image.tmdb.org/t/p/original${movie.poster_path}" alt = "${movie.title}">
-        <button class = "button-fav" id = "button-${movie.id}">Add to Favorites </button>`
+        <button class = "button-fav-movies" id = "button-${movie.id}">Add to Favorites </button>`
         movieContainer.appendChild(card);
     });
 }
@@ -32,7 +32,7 @@ fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&language=e
 .then((data) => {
     console.log(data)
     moviesToHtml(data.results)
-    myFavs(data.results)
+    myFavsMovies(data.results)
 })
 
 
@@ -45,7 +45,7 @@ const seriesToHtml = (array) => {
         card.className = "swiper-slide";
         card.innerHTML = `
         <img src = "https://image.tmdb.org/t/p/original${series.poster_path}" alt = "${series.title}">
-        <button class = "button-fav" id = "button-${series.id}">Add to Favorites </button>`
+        <button class = "button-fav-series" id = "button-${series.id}">Add to Favorites </button>`
         seriesContainer.appendChild(card);
     });
 }
@@ -56,7 +56,7 @@ fetch(`https://api.themoviedb.org/3/tv/top_rated?api_key=${apiKey}&language=en-U
 .then((data) => {
     console.log(data)
     seriesToHtml(data.results)
-    myFavs(data.results)
+    myFavsSeries(data.results)
     })
 
 // carrusel con swiper
