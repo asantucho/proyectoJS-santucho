@@ -19,10 +19,9 @@ function myFavs (array) {
             }
         })
     }
+// la ejecución de esta función está en el then del fetch correspondiente, en archivo dom-api.js, como myFavs(data.results) para acceder a la info que trae el fetch
 
-const favoritesList = getFromLocalStorage("favorites")
+let favoritesList = getFromLocalStorage("favorites")
 favorites = favoritesList || []
 
-localStorage.removeItem("favorites")
 
-// la ejecución de esta función está en el then del fetch correspondiente, en archivo dom-api.js, como myFavs(data.results) para acceder a la info que trae el fetch
