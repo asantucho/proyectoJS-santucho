@@ -12,6 +12,7 @@ function myFavsMovies (array) {
             })
             favorites.push(findFavs)
             saveInLocalStorage("favorites", favorites)
+            favContainer.innerHTML = ""
             favoriteSelection(favorites)
             }
         })
@@ -29,6 +30,7 @@ function myFavsSeries (array) {
             })
             favorites.push(findFavs)
             saveInLocalStorage("favorites", favorites)
+            favContainer.innerHTML = ""
             favoriteSelection(favorites)
             }
         })
@@ -56,7 +58,7 @@ const favoriteSelection = (array) => {
         favContainer.appendChild(favCard)
     } )
 }
-favoriteSelection(favorites)
+//funcion ejecutada en las funciones de agregar a favoritos myFavsMovies y myFavsSeries
 
 
 //eliminar todos los favoritos
@@ -76,10 +78,13 @@ function deleteEachFav (array) {
     deleteButton.forEach (button =>{
         button.onclick = () => {
             const idFav = button.id.slice(7)
-            const filterFavs = array.filter ((favorite) => {
+            const filterFavs = array.filter ((favorite, index) => {
                 return favorite.id !== Number(idFav)
             }) 
+            favorites = filterFavs
+            saveInLocalStorage("favorites", filterFavs)
         }
     })
-
 }
+
+deleteEachFav(favorites)
