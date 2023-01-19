@@ -2,7 +2,8 @@
     padding: 2%;
     align-content: center;
     .form-contact{
-        margin: 5%;
+        margin: auto;
+        margin-top: 5%;
         padding: 3%;
         display: block;
         background-image: none;
@@ -45,7 +46,7 @@
                 border: 1px solid #ced4da;
                 border-radius: 0.25rem;
                 transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-                
+
             }
             .form-control:focus{
                 transform: scale(1.03);

@@ -227,7 +227,8 @@ main div .favorites-container .favorite-card img {
   align-content: center;
 }
 .contact-form-container .form-contact {
-  margin: 5%;
+  margin: auto;
+  margin-top: 5%;
   padding: 3%;
   display: block;
   background-image: none;

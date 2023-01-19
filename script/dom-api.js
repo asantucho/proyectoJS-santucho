@@ -57,7 +57,7 @@ fetch(`https://api.themoviedb.org/3/tv/top_rated?api_key=${apiKey}&language=en-U
     console.log(data)
     seriesToHtml(data.results)
     myFavsSeries(data.results)
-    favoriteSelection(favorites)
+//    favoriteSelection(favorites)
     })
 
 // carrusel con swiper

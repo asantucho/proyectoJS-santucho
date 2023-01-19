@@ -13,7 +13,7 @@ function myFavsMovies (array) {
             favorites.push(findFavs)
             saveInLocalStorage("favorites", favorites)
             favContainer.innerHTML = ""
- //           favoriteSelection(favorites)
+            favoriteSelection(favorites)
             }
         })
     }
@@ -31,7 +31,7 @@ function myFavsSeries (array) {
             favorites.push(findFavs)
             saveInLocalStorage("favorites", favorites)
             favContainer.innerHTML = ""
-//            favoriteSelection(favorites)
+            favoriteSelection(favorites)
             }
         })
     }
@@ -48,6 +48,7 @@ favorites = favoritesListMovies && favoritesListSeries || []
 const favContainer = document.querySelector(".favorites-container")
 
 const favoriteSelection = (array) => {
+    favContainer.innerHTML=""
     array.forEach((favoriteSelected) => {
         const favCard = document.createElement("div")
         favCard.className = "favorite-card"
@@ -56,6 +57,8 @@ const favoriteSelection = (array) => {
             <button class = "delete-each" id = "button-${favoriteSelected.id}"> Remove from favorites </button>
         `
         favContainer.appendChild(favCard)
+        const deleteButton = favCard.querySelector(".delete-each")
+        deleteButton.addEventListener("click", deleteEachFav)
     } )
 }
 
@@ -78,14 +81,15 @@ function deleteEachFav (array) {
     const deleteButton = document.querySelectorAll(".delete-each")
     deleteButton.forEach (button =>{
         button.onclick = () => {
-            const idFav = button.id.slice(7)
+            const favId = button.id.slice(7)
             const filterFavs = array.filter ((favorite, index) => {
-                return favorite.id !== Number(idFav)
+                return favorite.id !== Number(favId)
             }) 
             favorites = filterFavs
             saveInLocalStorage("favorites", filterFavs)
+            favContainer.innerHTML = ""
+            favoriteSelection(favorites)
         }
     })
 }
 
-deleteEachFav(favorites)

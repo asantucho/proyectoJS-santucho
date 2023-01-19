@@ -22,6 +22,14 @@ favoriteButton.onclick = () => {
     webContainer.style.display= "none";
 }
 
+window.onload = () => {
+    const storedFavorites = getFromLocalStorage("favorites")
+    if(storedFavorites) {
+        favorites = storedFavorites;
+        favoriteSelection(favorites)
+    }
+}
+
 //Contact us
 
 const contactButton = document.querySelector("#contact-us")
