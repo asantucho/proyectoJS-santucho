@@ -1,0 +1,9 @@
+.search-container{
+    .search-results{
+        display: flex;
+        flex-wrap: wrap;
+        .result-card{
+            width: 30%;
+        }
+    }
+}

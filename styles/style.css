@@ -176,12 +176,21 @@ nav .navbar-container ul {
 }
 nav .navbar-container ul .nav-item {
   width: 50%;
-  padding: 1%;
+  padding: 3%;
+  font-weight: bold;
+  text-decoration: none;
 }
-nav .navbar-container ul .search-nav-item {
+nav .navbar-container ul .nav-item:hover {
+  background-color: #022444;
+  color: white;
+}
+nav .navbar-container ul .search-nav-item .search-form {
   display: flex;
+  background-image: none;
+  margin: 1%;
+  height: inherit;
 }
-nav .navbar-container ul .search-nav-item .search-control {
+nav .navbar-container ul .search-nav-item .search-form .search-control {
   height: 50%;
   padding: 0.375rem 0.75rem 0.375rem;
   font-size: 1rem;
@@ -194,7 +203,7 @@ nav .navbar-container ul .search-nav-item .search-control {
   border-radius: 0.25rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
-nav .navbar-container ul .search-nav-item #search-btn {
+nav .navbar-container ul .search-nav-item .search-form #search-btn {
   height: 50%;
 }
 
@@ -306,4 +315,12 @@ main div .favorites-container .favorite-card img {
 }
 .contact-form-container .form-contact #button button:focus {
   background-color: #8d1812;
+}
+
+.search-container .search-results {
+  display: flex;
+  flex-wrap: wrap;
+}
+.search-container .search-results .result-card {
+  width: 30%;
 }/*# sourceMappingURL=style.css.map */

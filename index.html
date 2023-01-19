@@ -22,8 +22,10 @@
                         <button class="button" id = "light-dark-mode">Dark mode</button>
                     </li>
                     <li class="nav-item search-nav-item" role="search">
-                        <input class="search-control" type="search" placeholder="Search" aria-label="Search">
-                        <button class="button btn btn-outline-success" type="submit" id="search-btn">Search</button>
+                        <form action="#" class="search-form" id="search-form">
+                            <input class="search-control" type="search" placeholder="Search" aria-label="Search">
+                            <button class="button btn btn-outline-success" type="submit" id="search-btn">Search</button>
+                        </form>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#" id="home">Home</a>
@@ -113,7 +115,7 @@
         </div>
         <div class="search-container">
             <div class="search-results">
-                
+
             </div>
         </div>
     </main>
@@ -129,10 +131,11 @@
     
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script src = "./script/login.js"></script>
+    <script src="./script/login.js"></script>
     <script src="./script/darkmode.js"></script>
     <script src="./script/navbar.js"></script>
     <script src="./script/dom-api.js"></script>
+    <script src="./script/search.js"></script>
     <script src="./script/favorites.js"></script>
     <script src="./script/contact.js"></script>
 </body>
