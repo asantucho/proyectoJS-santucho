@@ -12,7 +12,7 @@ function myFavsMovies (array) {
             })
             favorites.push(findFavs)
             saveInLocalStorage("favorites", favorites)
-            favContainer.innerHTML = ""
+//            favContainer.innerHTML = ""
             favoriteSelection(favorites)
             }
         })
@@ -58,6 +58,7 @@ const favoriteSelection = (array) => {
         favContainer.appendChild(favCard)
     } )
 }
+
 //funcion ejecutada en las funciones de agregar a favoritos myFavsMovies y myFavsSeries
 
 

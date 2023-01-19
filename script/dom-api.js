@@ -35,7 +35,6 @@ fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&language=e
     myFavsMovies(data.results)
 })
 
-
 //series populares desde api
 
 const seriesToHtml = (array) => {

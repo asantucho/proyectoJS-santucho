@@ -1,10 +1,3 @@
-// let pickForMe = () =>{
-//     let randomId = Math.ceil(Math.random()*productsTotal.length)
-//     return productsTotal.find(product => product.id === randomId)
-// }
-
-// pickForMe()
-
 // LOG IN & LOG OUT
 
 //USUARIOS 
@@ -44,6 +37,10 @@ const logout = document.querySelector("#button-logout");
 const webContainer = document.querySelector(".web-container");
 const navbarContainer = document.querySelector(".navbar-container")
 
+const favoriteSection = document.querySelector(".favorites-list")
+const contactSection = document.querySelector(".contact-form-container")
+const searchSection = document.querySelector(".search-container")
+
 // GUARDAR INFORMACION EN LOCAL STORAGE Y OBTENERLA 
 
 const saveInLocalStorage = (key, value) => {
@@ -72,6 +69,9 @@ formLogin.onsubmit = (event) => {
         navbarContainer.style.display="block";
         logout.style.display = "block";
         wrongInfo.style.display="none";
+        contactSection.style.display="none";
+        favoriteSection.style.display="none";
+        searchSection.style.display="none";
     } else {
         wrongInfo.style.display = "block";
         wrongInfo.style.border = "1px solid red";
@@ -99,6 +99,9 @@ function validateLogIn(key) {
         logout.style.display = "block";
         webContainer.style.display= "block";
         navbarContainer.style.display="block";
+        contactSection.style.display="none";
+        favoriteSection.style.display="none";
+        searchSection.style.display="none";
         const username = getFromLocalStorage("username")
         welcomeUser.textContent = `Welcome ${username}`
     }

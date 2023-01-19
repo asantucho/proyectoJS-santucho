@@ -83,11 +83,37 @@
                 <div class="swiper-pagination"></div>
             </div>
         </div>
-        <div>
+        <div class="favorites-list">
             <h3>Want to watch list - My favorites</h3>
             <button class="remove-all-favs">REMOVE ALL FAVORITES</button>
             <div class="favorites-container"></div>
-        </div>  
+        </div>
+        <div class="contact-form-container">
+            <h3>Leave us your message, suggestion or questions and our team will get back to you as soon as possible</h3>
+            <form action="https://formspree.io/f/mpzbrlnz" method="post" class = "form-contact" id="form">
+                <div class="logo-container">
+                    <img src="./images/ExportAsset 5@4x.png" alt="VisiOn logo by Antonio Jordi Honik">
+                </div>
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="nombre" aria-describedby="nombre" placeholder="Name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email address </label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="example@example.com" required>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="mensaje" class="form-label">Message</label>
+                    <textarea class="form-control" name="mensaje" id="mensaje" rows="3" placeholder="Leave us your message here!" required></textarea>
+                </div>
+                <div id="button">
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </div>
+            </form>
+        </div>
+        <div class="search-container">
+            
+        </div>
     </main>
     <footer>
         <div class="f-flex">
@@ -102,6 +128,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script src = "./script/login.js"></script>
     <script src="./script/darkmode.js"></script>
+    <script src="./script/navbar.js"></script>
     <script src="./script/dom-api.js"></script>
     <script src="./script/favorites.js"></script>
 </body>
