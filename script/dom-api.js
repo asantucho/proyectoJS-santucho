@@ -33,6 +33,7 @@ fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&language=e
     console.log(data)
     moviesToHtml(data.results)
     myFavsMovies(data.results)
+//    favoriteSelection(favorites)
 })
 
 //series populares desde api
@@ -56,6 +57,7 @@ fetch(`https://api.themoviedb.org/3/tv/top_rated?api_key=${apiKey}&language=en-U
     console.log(data)
     seriesToHtml(data.results)
     myFavsSeries(data.results)
+    favoriteSelection(favorites)
     })
 
 // carrusel con swiper

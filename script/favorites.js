@@ -12,8 +12,8 @@ function myFavsMovies (array) {
             })
             favorites.push(findFavs)
             saveInLocalStorage("favorites", favorites)
-//            favContainer.innerHTML = ""
-            favoriteSelection(favorites)
+            favContainer.innerHTML = ""
+ //           favoriteSelection(favorites)
             }
         })
     }
@@ -31,7 +31,7 @@ function myFavsSeries (array) {
             favorites.push(findFavs)
             saveInLocalStorage("favorites", favorites)
             favContainer.innerHTML = ""
-            favoriteSelection(favorites)
+//            favoriteSelection(favorites)
             }
         })
     }
