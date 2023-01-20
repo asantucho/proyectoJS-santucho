@@ -1,10 +1,11 @@
-
+// search input. 
 
 function myFavSearch (array) {
     const favButton = document.querySelectorAll(".button-fav-search")
     favButton.forEach (button => {
         button.onclick = () => {
             const favId = button.id.slice(7)
+            console.log(favId)
             const findFavs = array.find ((favorite) => {
                 return favorite.id === Number(favId)
             })
@@ -12,9 +13,13 @@ function myFavSearch (array) {
             saveInLocalStorage("favorites", favorites)
             favContainer.innerHTML = ""
             favoriteSelection(favorites)
-            }
-        })
-    }
+        }
+    })
+}
+
+let favoritesListSearch = getFromLocalStorage("favorites")
+favorites = favoritesListMovies && favoritesListSeries  && favoritesListSearch|| []
+
 
 const searchResultsContainer = document.querySelector(".search-results")
 
@@ -45,6 +50,7 @@ searchForm.onsubmit = (event) =>{
     .then(data => {
         console.log(data)
         searchResultCards(data.results)
+        myFavSearch(data.results)
     })
 }
 

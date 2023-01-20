@@ -57,8 +57,7 @@ const favoriteSelection = (array) => {
             <button class = "delete-each" id = "button-${favoriteSelected.id}"> Remove from favorites </button>
         `
         favContainer.appendChild(favCard)
-        const deleteButton = favCard.querySelector(".delete-each")
-        deleteButton.addEventListener("click", deleteEachFav)
+        deleteEachFav(favorites)
     } )
 }
 

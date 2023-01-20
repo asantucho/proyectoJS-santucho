@@ -72,6 +72,8 @@ formLogin.onsubmit = (event) => {
         contactSection.style.display="none";
         favoriteSection.style.display="none";
         searchSection.style.display="none";
+        const username = getFromLocalStorage("username")
+        welcomeUser.textContent = `Welcome ${username}`
     } else {
         wrongInfo.style.display = "block";
         wrongInfo.style.border = "1px solid red";
