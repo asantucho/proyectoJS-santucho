@@ -1,3 +1,5 @@
+
+
 function myFavSearch (array) {
     const favButton = document.querySelectorAll(".button-fav-search")
     favButton.forEach (button => {
@@ -24,7 +26,7 @@ const searchResultCards = (array) => {
         <img src = "https://image.tmdb.org/t/p/original${result.poster_path}" alt = "${result.title || result.name}">
         <button class = "button-fav-search" id = "button-${result.id}">Add to Favorites </button>`
         searchResultsContainer.appendChild(resultCard)
-    })
+    }) 
 }
 
 
@@ -33,8 +35,8 @@ const searchInput = document.querySelector(".search-control")
 
 searchForm.onsubmit = (event) =>{
     event.preventDefault()
-    const smallerContainer = document.querySelector(".smaller-search-container")
     searchSection.style.display="block";
+    searchResultsContainer.innerHTML=""
     favoriteSection.style.display="none";
     contactSection.style.display="none";
     webContainer.style.display= "none";
@@ -44,7 +46,5 @@ searchForm.onsubmit = (event) =>{
         console.log(data)
         searchResultCards(data.results)
     })
-    searchResultsContainer.innerHTML = `
-    <h3>Showing results for ${searchInput.value}</h3>`
 }
 
