@@ -1,6 +1,6 @@
 // manipulando html con dom y api 
 
-// variables
+// variables para página principal
 
 const apiKey = "2bfe34db0d27d97661602c0ccc0e3df3"
 
@@ -9,8 +9,6 @@ const inputSearch = document.querySelector(".search-control")
 
 const movieContainer = document.querySelector("#my-movies")
 const seriesContainer = document.querySelector("#my-series")
-
-// ruta para imágenes de api : https://image.tmdb.org/t/p/original/PONER BACKDROP O POSTER
 
 //fetch a peliculas populares
 
@@ -26,7 +24,6 @@ const moviesToHtml = (array) => {
     });
 }
 
-
 fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&language=en-US&page=1`)
 .then(response => response.json())
 .then((data) => {
@@ -34,6 +31,7 @@ fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&language=e
     moviesToHtml(data.results)
     myFavsMovies(data.results)
 })
+.catch((error) => console.log("ERROR!"))
 
 //series populares desde api
 
@@ -49,7 +47,6 @@ const seriesToHtml = (array) => {
     });
 }
 
-
 fetch(`https://api.themoviedb.org/3/tv/top_rated?api_key=${apiKey}&language=en-US&page=1`)
 .then(response => response.json())
 .then((data) => {
@@ -57,22 +54,27 @@ fetch(`https://api.themoviedb.org/3/tv/top_rated?api_key=${apiKey}&language=en-U
     seriesToHtml(data.results)
     myFavsSeries(data.results)
     })
+.catch((error) => console.log("ERROR!"))
 
 // carrusel con swiper
 
 let swiper = new Swiper(".mySwiper", {
     slidesPerView: 5,
-    spaceBetween: 30,
+    spaceBetween: 20,
     slidesPerGroup: 5,
-    loop: true,
-    loopAdditionalSlides: 0,
-    loopFillGroupWithBlank: true,
+    // loop: true,
+    // loopAdditionalSlides: 0,
+    // loopFillGroupWithBlank: true,
+    autoplay: {
+        delay: 3500,
+        disableOnInteraction: false,
+    },
     pagination: {
         el: ".swiper-pagination",
         clickable: true,
     },
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    }
+    // navigation: {
+    //     nextEl: ".swiper-button-next",
+    //     prevEl: ".swiper-button-prev",
+    // }
 });

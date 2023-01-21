@@ -71,7 +71,21 @@ nav{
             }
             #button-logout{
                 margin-right: 0.5%;
+                img {
+                    width: 25px;
+                    padding: auto;
+                }
             }
         }
     }
+}
+
+
+.icon{
+    filter: invert(0.8);
+    width: 15px;
+}
+
+#sun{
+    display: none;
 }

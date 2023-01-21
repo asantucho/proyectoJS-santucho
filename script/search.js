@@ -35,7 +35,6 @@ const searchResultCards = (array) => {
 }
 
 const searchTitle = document.querySelector(".search-title")
-
 const searchForm = document.querySelector(".search-form")
 const searchInput = document.querySelector(".search-control")
 
@@ -47,12 +46,28 @@ searchForm.onsubmit = (event) =>{
     favoriteSection.style.display="none";
     contactSection.style.display="none";
     webContainer.style.display= "none";
+    localStorage.removeItem = "section"
+    saveInLocalStorage("section", "search")
     fetch(`https://api.themoviedb.org/3/search/multi?query=${searchInput.value}&api_key=${apiKey}&language=en-US&page=1&include_adult=false`)
     .then(results => results.json())
     .then(data => {
         console.log(data)
+        localStorage.removeItem="search-results"
+        localStorage.removeItem="search-input"
+        saveInLocalStorage("search-results", data.results)
+        saveInLocalStorage("search-input", searchInput.value)
         searchResultCards(data.results)
         myFavSearch(data.results)
     })
+    .catch((error) => console.log("ERROR!"))
+}
+
+window.onload = () => {
+    const storedResults = getFromLocalStorage("search-results")
+    const storedInput = getFromLocalStorage("search-input")
+    if(storedResults) {
+        searchTitle.textContent= `Watching results for "${storedInput}"`
+        searchResultCards(storedResults)
+    }
 }
 

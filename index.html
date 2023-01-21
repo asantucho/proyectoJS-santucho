@@ -19,12 +19,18 @@
                 <div class="navbar-container">
                 <ul class="navbar-main">
                     <li class="nav-item">
-                        <button class="button" id = "light-dark-mode">Dark mode</button>
+                        <button id="random">RANDOM</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="button" id = "light-dark-mode">
+                            <img class="icon" id = "moon" src="./images/moon-regular.svg" alt="Dark mode">
+                            <img class="icon" id = "sun" src="./images/sun-regular.svg" alt="Light mode">
+                        </button>
                     </li>
                     <li class="nav-item search-nav-item" role="search">
                         <form action="#" class="search-form" id="search-form">
                             <input class="search-control" type="search" placeholder="Search" aria-label="Search" required>
-                            <button class="button btn btn-outline-success" type="submit" id="search-btn">Search</button>
+                            <button class="button btn btn-outline-success" type="submit" id="search-btn"><img class= "icon" src="./images/magnifying-glass-solid.svg" alt="search"></button>
                         </form>
                     </li>
                     <li class="nav-item item-mouse">
@@ -38,7 +44,7 @@
                     </li>
                     <li class="nav-item">
                         <div>
-                            <button type="submit" class="button btn btn-primary" id = "button-logout">Log Out</button>
+                            <button type="submit" class="button btn btn-primary" id = "button-logout"><img class="icon" src="./images/right-from-bracket-solid.svg" alt="Log Out"></button>
                         </div>
                     </li>
                 </ul>
@@ -77,16 +83,12 @@
             <div class="swiper mySwiper">
                 <h3>Our Top Rated Movies</h3>
                 <div class = "container-mine flex-mine swiper-wrapper" id = "my-movies"></div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
                 <div class="swiper-pagination"></div>
             </div>
             <hr>
             <div class="swiper mySwiper">
                 <h3>Our Top Rated Series</h3>
                 <div class="container-mine grid-mine swiper-wrapper" id = "my-series"></div>  
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
                 <div class="swiper-pagination"></div>
             </div>
         </section>
@@ -119,7 +121,7 @@
             </form>
         </section>
     </main>
-    <footer>
+    <footer id="footer">
         <div class="f-flex">
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga nemo autem amet. Sequi distinctio magnam aspernatur ullam cupiditate reiciendis, rem quod ab eius neque maxime non, minima dolores magni est!</p>
         </div>
@@ -130,7 +132,7 @@
     
     
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./script/login.js"></script>
     <script src="./script/darkmode.js"></script>
     <script src="./script/navbar.js"></script>
@@ -138,5 +140,6 @@
     <script src="./script/favorites.js"></script>
     <script src="./script/search.js"></script>
     <script src="./script/contact.js"></script>
+    <script src="./script/random.js"></script>
 </body>
 </html>

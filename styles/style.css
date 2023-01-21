@@ -65,7 +65,6 @@ main .web-container .swiper .swiper-wrapper {
   padding-bottom: 1%;
 }
 main .web-container .swiper .swiper-wrapper .swiper-slide {
-  margin: 0.3%;
   width: 3%;
   display: flex;
   flex-direction: column;
@@ -250,7 +249,23 @@ nav .navbar-container ul .search-nav-item .search-form #search-btn {
 nav .navbar-container ul #button-logout {
   margin-right: 0.5%;
 }
+nav .navbar-container ul #button-logout img {
+  width: 25px;
+  padding: auto;
+}
 
+.icon {
+  filter: invert(0.8);
+  width: 15px;
+}
+
+#sun {
+  display: none;
+}
+
+main section {
+  min-height: 60vh;
+}
 main section h3 {
   display: block;
 }
@@ -269,10 +284,6 @@ main section .favorites-container .favorite-card {
 }
 main section .favorites-container .favorite-card img {
   width: 100%;
-}
-
-.icon {
-  filter: opacity(1);
 }
 
 .contact-form-container {
