@@ -3,12 +3,32 @@
     padding: 0;
 }
 body{
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 100%;
-    background-color: aliceblue;
+    background-color: #fafaf0;
+    font-family: 'Open Sans', sans-serif;
+
 }
 
 .dark-mode {
-    background-color: black;
-    color: white;
+    background-color: #00172E;
+    color: #fafaf0;
+    main {
+        .contact-form-container{
+            .form-contact{
+                border: solid 1px #fafaf0;
+                color: #fafaf0;
+            }
+        }
+    }
+    footer {
+        color: #00172E;
+    }
+}
+
+section {
+    h3 {
+        margin: 2%;
+        padding: 1%;
+        font-style: italic;
+    }
 }

@@ -1,4 +1,4 @@
-// search input. 
+// search input. Lista creada con los resultados del fetch. Creación de botón para que agregue a favoritos on click.
 
 function myFavSearch (array) {
     const favButton = document.querySelectorAll(".button-fav-search")
@@ -34,6 +34,7 @@ const searchResultCards = (array) => {
     }) 
 }
 
+const searchTitle = document.querySelector(".search-title")
 
 const searchForm = document.querySelector(".search-form")
 const searchInput = document.querySelector(".search-control")
@@ -41,6 +42,7 @@ const searchInput = document.querySelector(".search-control")
 searchForm.onsubmit = (event) =>{
     event.preventDefault()
     searchSection.style.display="block";
+    searchTitle.textContent= `Watching results for "${searchInput.value}"`
     searchResultsContainer.innerHTML=""
     favoriteSection.style.display="none";
     contactSection.style.display="none";

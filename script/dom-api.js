@@ -61,29 +61,15 @@ fetch(`https://api.themoviedb.org/3/tv/top_rated?api_key=${apiKey}&language=en-U
 // carrusel con swiper
 
 let swiper = new Swiper(".mySwiper", {
-    slidesPerView: 2,
-    spaceBetween: 8,
+    slidesPerView: 5,
+    spaceBetween: 30,
+    slidesPerGroup: 5,
+    loop: true,
+    loopAdditionalSlides: 0,
+    loopFillGroupWithBlank: true,
     pagination: {
         el: ".swiper-pagination",
         clickable: true,
-    },
-    breakpoints: {
-        "@0.00": {
-        slidesPerView: 3,
-        spaceBetween: 10,
-        },
-        "@0.75": {
-        slidesPerView: 4,
-        spaceBetween: 20,
-        },
-        "@1.00": {
-        slidesPerView: 5,
-        spaceBetween: 40,
-        },
-        "@1.50": {
-        slidesPerView: 6,
-        spaceBetween: 50,
-        },
     },
     navigation: {
         nextEl: ".swiper-button-next",

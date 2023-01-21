@@ -66,14 +66,14 @@ formLogin.onsubmit = (event) => {
         saveInLocalStorage("username", foundUser.username);
         logInContainer.style.display = "none";
         webContainer.style.display= "block";
-        navbarContainer.style.display="block";
+        navbarContainer.style.display="flex";
         logout.style.display = "block";
         wrongInfo.style.display="none";
         contactSection.style.display="none";
         favoriteSection.style.display="none";
         searchSection.style.display="none";
         const username = getFromLocalStorage("username")
-        welcomeUser.textContent = `Welcome ${username}`
+        welcomeUser.textContent = `Welcome ${username}!`
     } else {
         wrongInfo.style.display = "block";
         wrongInfo.style.border = "1px solid red";
@@ -105,7 +105,7 @@ function validateLogIn(key) {
         favoriteSection.style.display="none";
         searchSection.style.display="none";
         const username = getFromLocalStorage("username")
-        welcomeUser.textContent = `Welcome ${username}`
+        welcomeUser.textContent = `Welcome ${username}!`
     }
 }
 

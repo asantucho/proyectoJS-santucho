@@ -23,18 +23,18 @@
                     </li>
                     <li class="nav-item search-nav-item" role="search">
                         <form action="#" class="search-form" id="search-form">
-                            <input class="search-control" type="search" placeholder="Search" aria-label="Search">
+                            <input class="search-control" type="search" placeholder="Search" aria-label="Search" required>
                             <button class="button btn btn-outline-success" type="submit" id="search-btn">Search</button>
                         </form>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#" id="home">Home</a>
+                    <li class="nav-item item-mouse">
+                        <a class="nav-link" aria-current="page" href="#" id="home">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#" id="my-favorites">My favorites</a>
+                    <li class="nav-item item-mouse">
+                        <a class="nav-link" href="#" id="my-favorites">My favorites</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#" id="contact-us">Contact Us!</a>
+                    <li class="nav-item item-mouse">
+                        <a class="nav-link" href="#" id="contact-us">Contact Us!</a>
                     </li>
                     <li class="nav-item">
                         <div>
@@ -46,7 +46,7 @@
         </nav>
     </header>
     <main>
-        <div class = "login-container">
+        <section class = "login-container">
             <form action="" method="post" id = "login">
                 <div class="form-container">
                     <div class="mb-3">
@@ -65,12 +65,17 @@
                     </div>
                 </div>
             </form>
-        </div>
-        <div class="web-container">
-            <h1> Welcome username!</h1>
+        </section>
+        <section class="search-container">
+            <h3 class="search-title"></h3>
+            <div class="search-results">
+            </div>
+        </section>
+        <section class="web-container">
+            <h1> Welcome</h1>
             <h2> What do you want to watch today?</h2>
             <div class="swiper mySwiper">
-                <h3>Movies</h3>
+                <h3>Our Top Rated Movies</h3>
                 <div class = "container-mine flex-mine swiper-wrapper" id = "my-movies"></div>
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
@@ -78,19 +83,19 @@
             </div>
             <hr>
             <div class="swiper mySwiper">
-                <h3>Series</h3>
+                <h3>Our Top Rated Series</h3>
                 <div class="container-mine grid-mine swiper-wrapper" id = "my-series"></div>  
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-pagination"></div>
             </div>
-        </div>
-        <div class="favorites-list">
+        </section>
+        <section class="favorites-list">
             <h3>Want to watch list - My favorites</h3>
+            <div class="favorites-container">No favorites have been added to the list yet</div>
             <button class="remove-all-favs">REMOVE ALL FAVORITES</button>
-            <div class="favorites-container"></div>
-        </div>
-        <div class="contact-form-container">
+        </section>
+        <section class="contact-form-container">
             <h3>Leave us your message, suggestion or questions</h3>
             <form action="#" method="post" class = "form-contact" id="form">
                 <div class="logo-container">
@@ -112,12 +117,7 @@
                     <button type="submit" class="btn btn-primary" id ="contact-button-send">Send</button>
                 </div>
             </form>
-        </div>
-        <div class="search-container">
-            <div class="search-results">
-
-            </div>
-        </div>
+        </section>
     </main>
     <footer>
         <div class="f-flex">
@@ -129,7 +129,7 @@
     </footer>
     
     
-    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="./script/login.js"></script>
     <script src="./script/darkmode.js"></script>
