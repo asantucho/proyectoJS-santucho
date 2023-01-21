@@ -19,8 +19,6 @@ fetch(`https://api.themoviedb.org/3/trending/all/day?api_key=${apiKey}`)
 .then (data => {
     console.log(data)
     random.onclick = () =>{
-        pickForMe(data.results)
-        console.log(pickForMe(data.results))
         let randomResult = pickForMe(data.results)
         Swal.fire({
             title: `${randomResult.title || randomResult.name}`,
