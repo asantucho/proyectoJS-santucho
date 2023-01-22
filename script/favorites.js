@@ -50,6 +50,7 @@ favorites = favoritesListMovies && favoritesListSeries || []
 // crear cards para los seleccionados como favoritos y el boton para eliminarlos del array
 
 const favoriteSelection = (array) => {
+    console.log('favoriteSelection function called')
     favContainer.innerHTML=""
     array.forEach((favoriteSelected) => {
         const favCard = document.createElement("div")

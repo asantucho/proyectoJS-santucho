@@ -59,11 +59,16 @@ searchForm.onsubmit = (event) =>{
 }
 
 window.onload = () => {
-    const storedResults = getFromLocalStorage("search-results")
+    const storedSearchResults = getFromLocalStorage("search-results")
     const storedInput = getFromLocalStorage("search-input")
-    if(storedResults) {
+    if(storedSearchResults) {
         searchTitle.textContent= `Watching results for "${storedInput}"`
-        searchResultCards(storedResults)
+        searchResultCards(storedSearchResults)
+    }
+    const storedFavorites = getFromLocalStorage("favorites")
+    if(storedFavorites) {
+        favorites = storedFavorites;
+        favoriteSelection(favorites)
     }
 }
 

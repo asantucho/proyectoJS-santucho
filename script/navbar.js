@@ -26,8 +26,12 @@ favoriteButton.onclick = () => {
     saveInLocalStorage("section", "favorites")
 }
 
+
+console.log(window)
 window.onload = () => {
+    console.log("window")
     const storedFavorites = getFromLocalStorage("favorites")
+    console.log(storedFavorites)
     if(storedFavorites) {
         favorites = storedFavorites;
         favoriteSelection(favorites)
