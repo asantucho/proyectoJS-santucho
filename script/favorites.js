@@ -10,8 +10,13 @@ function myFavsMovies (array) {
             const findFavs = array.find ((favorite) => {
                 return favorite.id === Number(favId)
             })
-            favorites.push(findFavs)
-            saveInLocalStorage("favorites", favorites)
+            const doNotRepeat = () => {
+                if (!favorites.includes(findFavs)){
+                    favorites.push(findFavs)
+                    saveInLocalStorage("favorites", favorites)
+                }
+            }
+            doNotRepeat()
             favContainer.innerHTML = ""
             favoriteSelection(favorites)
             }
@@ -28,8 +33,13 @@ function myFavsSeries (array) {
             const findFavs = array.find ((favorite) => {
                 return favorite.id === Number(favId)
             })
-            favorites.push(findFavs)
-            saveInLocalStorage("favorites", favorites)
+            const doNotRepeat = () => {
+                if (!favorites.includes(findFavs)){
+                    favorites.push(findFavs)
+                    saveInLocalStorage("favorites", favorites)
+                }
+            }
+            doNotRepeat()
             favContainer.innerHTML = ""
             favoriteSelection(favorites)
             }

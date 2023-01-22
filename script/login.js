@@ -6,22 +6,27 @@ const users = [
     {
         username: "agustina",
         password: "agustina",
+        favorites:[],
     },
     {
         username: "joaquin",
         password: "joaquin",
+        favorites:[],
     },
     {
         username: "matias",
         password: "matias",
+        favorites:[],
     },
     {
         username: "clarita",
         password: "clarita",
+        favorites:[],
     },
     {
         username: "victoria",
         password: "victoria",
+        favorites:[],
     },
 ];
 
