@@ -1,5 +1,3 @@
-const contactForm = document.querySelector(".form-contact")
-
 contactForm.onsubmit = (event) =>{
     event.preventDefault()
     Swal.fire({

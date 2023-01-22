@@ -21,11 +21,8 @@ function myFavSearch (array) {
     })
 }
 
-let favoritesListSearch = getFromLocalStorage("favorites")
 favorites = favoritesListMovies && favoritesListSeries  && favoritesListSearch|| []
 
-
-const searchResultsContainer = document.querySelector(".search-results")
 
 const searchResultCards = (array) => {
     array.forEach((result) => {
@@ -37,10 +34,6 @@ const searchResultCards = (array) => {
         searchResultsContainer.appendChild(resultCard)
     }) 
 }
-
-const searchTitle = document.querySelector(".search-title")
-const searchForm = document.querySelector(".search-form")
-const searchInput = document.querySelector(".search-control")
 
 searchForm.onsubmit = (event) =>{
     event.preventDefault()

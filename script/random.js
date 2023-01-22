@@ -7,10 +7,6 @@ const pickForMe = (array)=>{
     return array[randomPosition]
 }
 
-// constructor
-
-const random = document.querySelector("#random")
-
 // fetch a API. Ejecución de funcion. Modal de swwet alert con el resultado 
 
 fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`)
@@ -28,7 +24,5 @@ fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-
     }
 })
 .catch (error => console.log("ERROR!"))
-
-// swal - sweet alert
 
 

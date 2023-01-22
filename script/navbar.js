@@ -2,8 +2,6 @@
 
 //home
 
-const homeButton = document.querySelector("#home")
-
 homeButton.onclick = () => {
     webContainer.style.display= "block";
     contactSection.style.display="none";
@@ -16,9 +14,6 @@ homeButton.onclick = () => {
 }
 
 //My favorites
-
-const favoriteButton = document.querySelector("#my-favorites")
-
 
 favoriteButton.onclick = () => {
     favoriteSection.style.display="block";
@@ -40,8 +35,6 @@ window.onload = () => {
 }
 
 //Contact us
-
-const contactButton = document.querySelector("#contact-us")
 
 contactButton.onclick = () => {
     contactSection.style.display="block";

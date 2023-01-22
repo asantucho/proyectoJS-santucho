@@ -1,7 +1,5 @@
 // Agregar a favoritos movies
 
-let favorites = []
-
 function myFavsMovies (array) {
     const favButton = document.querySelectorAll(".button-fav-movies")
     favButton.forEach (button => {
@@ -23,7 +21,6 @@ function myFavsMovies (array) {
         })
     }
 
-let favoritesListMovies = getFromLocalStorage("favorites")
 
 function myFavsSeries (array) {
     const favButton = document.querySelectorAll(".button-fav-series")
@@ -46,15 +43,11 @@ function myFavsSeries (array) {
         })
     }
 
-
-let favoritesListSeries = getFromLocalStorage("favorites")
 favorites = favoritesListMovies && favoritesListSeries || []
 
 // la ejecución de esta función está en el then del fetch correspondiente, en archivo dom-api.js, como myFavs(data.results) para acceder a la info que trae el fetch
 
 // crear cards para los seleccionados como favoritos y el boton para eliminarlos del array
-
-const favContainer = document.querySelector(".favorites-container")
 
 const favoriteSelection = (array) => {
     favContainer.innerHTML=""
@@ -74,7 +67,6 @@ const favoriteSelection = (array) => {
 
 //eliminar todos los favoritos
 
-const deleteAllFavs = document.querySelector(".remove-all-favs")
 
 deleteAllFavs.onclick = () => {
     localStorage.removeItem("favorites")

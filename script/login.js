@@ -1,69 +1,5 @@
 // LOG IN & LOG OUT
 
-//USUARIOS 
-
-const users = [
-    {
-        username: "agustina",
-        password: "agustina",
-        favorites:[],
-    },
-    {
-        username: "joaquin",
-        password: "joaquin",
-        favorites:[],
-    },
-    {
-        username: "matias",
-        password: "matias",
-        favorites:[],
-    },
-    {
-        username: "clarita",
-        password: "clarita",
-        favorites:[],
-    },
-    {
-        username: "victoria",
-        password: "victoria",
-        favorites:[],
-    },
-];
-
-//VARIABLES
-
-const inputUsername = document.querySelector("#input-username");
-const inputPassword = document.querySelector("#input-password");
-
-const formLogin = document.querySelector("#login");
-const logInContainer = document.querySelector(".login-container");
-const logout = document.querySelector("#button-logout");
-
-const webContainer = document.querySelector(".web-container");
-const navbarContainer = document.querySelector(".navbar-container")
-
-const favoriteSection = document.querySelector(".favorites-list")
-const contactSection = document.querySelector(".contact-form-container")
-const searchSection = document.querySelector(".search-container")
-
-// GUARDAR INFORMACION EN LOCAL STORAGE Y OBTENERLA 
-
-const saveInLocalStorage = (key, value) => {
-    localStorage.setItem(key, JSON.stringify(value));
-};
-
-const getFromLocalStorage = (key) => {
-    return JSON.parse(localStorage.getItem(key));
-};
-
-const removeFromLocalStorage = (key) => {
-    localStorage.removeItem(key)
-}
-
-// log in -- EVENTO ON SUBMIT
-
-const wrongInfo = document.querySelector("#wrong-info");
-
 formLogin.onsubmit = (event) => {
     event.preventDefault();
     const foundUser = users.find((user) =>
@@ -93,12 +29,13 @@ formLogin.onsubmit = (event) => {
 
 //validar login
 
-const welcomeUser = document.querySelector("h1");
-
 function validateLogIn(key) {
     if (key !== true) {
         logInContainer.style.display = "block";
         logout.style.display = "none";
+        contactSection.style.display="none";
+        favoriteSection.style.display="none";
+        searchSection.style.display="none";
         welcomeUser.textContent = `Welcome username`
     } else if (key === false) {
         wrongInfo.style.display = "block";
@@ -127,6 +64,7 @@ logout.onclick = () => {
     validateLogIn(getFromLocalStorage("login"));
     removeFromLocalStorage("username")
     removeFromLocalStorage("section")
+    removeFromLocalStorage("favorites")
     webContainer.style.display="none";
     navbarContainer.style.display="none";
     logInContainer.style.display = "block"
