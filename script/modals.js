@@ -1,3 +1,20 @@
+//modales con sweet alert
+
+// formulario de contacto
+
+contactForm.onsubmit = (event) =>{
+    event.preventDefault()
+    Swal.fire({
+        title: "Sent!",
+        text: "Our team will read your message and start working on it ASAP",
+        icon: "success",
+        button: "Done",
+    });
+    contactForm.reset()
+}
+
+//random pick movie
+
 // random pick
 
 // funcion
@@ -24,5 +41,3 @@ fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-
     }
 })
 .catch (error => console.log("ERROR!"))
-
-
