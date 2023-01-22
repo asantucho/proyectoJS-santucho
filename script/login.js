@@ -51,6 +51,10 @@ const getFromLocalStorage = (key) => {
     return JSON.parse(localStorage.getItem(key));
 };
 
+const removeFromLocalStorage = (key) => {
+    localStorage.removeItem(key)
+}
+
 // log in -- EVENTO ON SUBMIT
 
 const wrongInfo = document.querySelector("#wrong-info");
@@ -114,11 +118,14 @@ validateLogIn(getFromLocalStorage("login"));
 //logout -- EVENTO ON CLICK
 
 logout.onclick = () => {
-    localStorage.removeItem("login");
+    removeFromLocalStorage("login")
     validateLogIn(getFromLocalStorage("login"));
-    localStorage.removeItem("username");
+    removeFromLocalStorage("username")
+    removeFromLocalStorage("section")
     webContainer.style.display="none";
     navbarContainer.style.display="none";
+    logInContainer.style.display = "block"
+
 
     formLogin.reset();
 };

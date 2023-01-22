@@ -9,7 +9,9 @@ homeButton.onclick = () => {
     contactSection.style.display="none";
     favoriteSection.style.display="none";
     searchSection.style.display="none";
-    localStorage.removeItem = "section"
+    removeFromLocalStorage("section")
+    removeFromLocalStorage("search-results")
+    removeFromLocalStorage("search-input")
     saveInLocalStorage("section", "home")
 }
 
@@ -23,7 +25,9 @@ favoriteButton.onclick = () => {
     searchSection.style.display="none";
     contactSection.style.display="none";
     webContainer.style.display= "none";
-    localStorage.removeItem = "section"
+    removeFromLocalStorage("section")
+    removeFromLocalStorage("search-results")
+    removeFromLocalStorage("search-input")
     saveInLocalStorage("section", "favorites")
 }
 
@@ -44,7 +48,9 @@ contactButton.onclick = () => {
     favoriteSection.style.display="none";
     searchSection.style.display="none";
     webContainer.style.display= "none";
-    localStorage.removeItem="section"
+    removeFromLocalStorage("section")
+    removeFromLocalStorage("search-results")
+    removeFromLocalStorage("search-input")
     saveInLocalStorage("section", "contact")
 }
 
@@ -56,21 +62,27 @@ const validateSection = (key) =>{
         contactSection.style.display="none";
         favoriteSection.style.display="none";
         searchSection.style.display="none";
-        localStorage.removeItem = "section"
+        removeFromLocalStorage("section")
+        removeFromLocalStorage("search-results")
+        removeFromLocalStorage("search-input")
         saveInLocalStorage("section", "home")
     } else if (key ==="favorites"){
         favoriteSection.style.display="block";
         searchSection.style.display="none";
         contactSection.style.display="none";
         webContainer.style.display= "none";
-        localStorage.removeItem = "section"
+        removeFromLocalStorage("section")
+        removeFromLocalStorage("search-results")
+        removeFromLocalStorage("search-input")
         saveInLocalStorage("section", "favorites")
     } else if (key === "contact"){
         contactSection.style.display="block";
         favoriteSection.style.display="none";
         searchSection.style.display="none";
         webContainer.style.display= "none";
-        localStorage.removeItem="section"
+        removeFromLocalStorage("section")
+        removeFromLocalStorage("search-results")
+        removeFromLocalStorage("search-input")
         saveInLocalStorage("section", "contact")
     } else if (key === "search"){
         const searchTitle = document.querySelector(".search-title")
@@ -80,7 +92,7 @@ const validateSection = (key) =>{
         favoriteSection.style.display="none";
         contactSection.style.display="none";
         webContainer.style.display= "none";
-        localStorage.removeItem = "section"
+        removeFromLocalStorage("section")
         saveInLocalStorage("section", "search")
     }
 }

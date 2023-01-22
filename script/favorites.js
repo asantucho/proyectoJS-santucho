@@ -67,7 +67,7 @@ const favoriteSelection = (array) => {
 const deleteAllFavs = document.querySelector(".remove-all-favs")
 
 deleteAllFavs.onclick = () => {
-    localStorage.removeItem="favorites"
+    localStorage.removeItem("favorites")
     favorites = []
     favContainer.innerHTML = "No favorites have been added to the list yet"
 }

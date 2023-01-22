@@ -5,7 +5,6 @@ function myFavSearch (array) {
     favButton.forEach (button => {
         button.onclick = () => {
             const favId = button.id.slice(7)
-            console.log(favId)
             const findFavs = array.find ((favorite) => {
                 return favorite.id === Number(favId)
             })
@@ -46,14 +45,13 @@ searchForm.onsubmit = (event) =>{
     favoriteSection.style.display="none";
     contactSection.style.display="none";
     webContainer.style.display= "none";
-    localStorage.removeItem = "section"
+    removeFromLocalStorage("section")
     saveInLocalStorage("section", "search")
     fetch(`https://api.themoviedb.org/3/search/multi?query=${searchInput.value}&api_key=${apiKey}&language=en-US&page=1&include_adult=false`)
     .then(results => results.json())
     .then(data => {
-        console.log(data)
-        localStorage.removeItem="search-results"
-        localStorage.removeItem="search-input"
+        removeFromLocalStorage("search-results")
+        removeFromLocalStorage("search-input")
         saveInLocalStorage("search-results", data.results)
         saveInLocalStorage("search-input", searchInput.value)
         searchResultCards(data.results)

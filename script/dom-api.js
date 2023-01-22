@@ -27,7 +27,6 @@ const moviesToHtml = (array) => {
 fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&language=en-US&page=1`)
 .then(response => response.json())
 .then((data) => {
-    console.log(data)
     moviesToHtml(data.results)
     myFavsMovies(data.results)
 })
@@ -50,7 +49,6 @@ const seriesToHtml = (array) => {
 fetch(`https://api.themoviedb.org/3/tv/top_rated?api_key=${apiKey}&language=en-US&page=1`)
 .then(response => response.json())
 .then((data) => {
-    console.log(data)
     seriesToHtml(data.results)
     myFavsSeries(data.results)
     })
@@ -62,9 +60,6 @@ let swiper = new Swiper(".mySwiper", {
     slidesPerView: 5,
     spaceBetween: 20,
     slidesPerGroup: 5,
-    // loop: true,
-    // loopAdditionalSlides: 0,
-    // loopFillGroupWithBlank: true,
     autoplay: {
         delay: 3500,
         disableOnInteraction: false,
@@ -73,8 +68,4 @@ let swiper = new Swiper(".mySwiper", {
         el: ".swiper-pagination",
         clickable: true,
     },
-    // navigation: {
-    //     nextEl: ".swiper-button-next",
-    //     prevEl: ".swiper-button-prev",
-    // }
 });
