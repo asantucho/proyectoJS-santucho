@@ -2,8 +2,6 @@
 
 //home
 
-const homeButton = document.querySelector("#home")
-
 homeButton.onclick = () => {
     webContainer.style.display= "block";
     contactSection.style.display="none";
@@ -17,9 +15,6 @@ homeButton.onclick = () => {
 
 //My favorites
 
-const favoriteButton = document.querySelector("#my-favorites")
-
-
 favoriteButton.onclick = () => {
     favoriteSection.style.display="block";
     searchSection.style.display="none";
@@ -31,8 +26,12 @@ favoriteButton.onclick = () => {
     saveInLocalStorage("section", "favorites")
 }
 
+
+console.log(window)
 window.onload = () => {
+    console.log("window")
     const storedFavorites = getFromLocalStorage("favorites")
+    console.log(storedFavorites)
     if(storedFavorites) {
         favorites = storedFavorites;
         favoriteSelection(favorites)
@@ -40,8 +39,6 @@ window.onload = () => {
 }
 
 //Contact us
-
-const contactButton = document.querySelector("#contact-us")
 
 contactButton.onclick = () => {
     contactSection.style.display="block";

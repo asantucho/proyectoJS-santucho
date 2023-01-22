@@ -21,11 +21,8 @@ function myFavSearch (array) {
     })
 }
 
-let favoritesListSearch = getFromLocalStorage("favorites")
 favorites = favoritesListMovies && favoritesListSeries  && favoritesListSearch|| []
 
-
-const searchResultsContainer = document.querySelector(".search-results")
 
 const searchResultCards = (array) => {
     array.forEach((result) => {
@@ -37,10 +34,6 @@ const searchResultCards = (array) => {
         searchResultsContainer.appendChild(resultCard)
     }) 
 }
-
-const searchTitle = document.querySelector(".search-title")
-const searchForm = document.querySelector(".search-form")
-const searchInput = document.querySelector(".search-control")
 
 searchForm.onsubmit = (event) =>{
     event.preventDefault()
@@ -66,11 +59,16 @@ searchForm.onsubmit = (event) =>{
 }
 
 window.onload = () => {
-    const storedResults = getFromLocalStorage("search-results")
+    const storedSearchResults = getFromLocalStorage("search-results")
     const storedInput = getFromLocalStorage("search-input")
-    if(storedResults) {
+    if(storedSearchResults) {
         searchTitle.textContent= `Watching results for "${storedInput}"`
-        searchResultCards(storedResults)
+        searchResultCards(storedSearchResults)
+    }
+    const storedFavorites = getFromLocalStorage("favorites")
+    if(storedFavorites) {
+        favorites = storedFavorites;
+        favoriteSelection(favorites)
     }
 }
 

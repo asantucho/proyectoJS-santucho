@@ -1,11 +1,5 @@
 // modo oscuro -- EVENTO ON CLICK
 
-const modes = document.querySelector("#light-dark-mode");
-const body = document.querySelector(".light-mode");
-
-const moon = document.querySelector("#moon")
-const sun = document.querySelector("#sun")
-
 modes.onclick = () => {
     body.classList.toggle("dark-mode");
     saveInLocalStorage("night-mode", true);
