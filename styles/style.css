@@ -83,8 +83,16 @@ footer {
   margin-top: 5%;
 }
 footer .f-flex {
-  font-family: Arial, Helvetica, sans-serif;
   padding: 3%;
+  width: 50%;
+  align-content: center;
+}
+footer .f-flex p {
+  line-height: 200%;
+  font-weight: bold;
+}
+footer .f-flex img {
+  width: 5%;
 }
 
 @font-face {
