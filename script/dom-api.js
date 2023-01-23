@@ -1,15 +1,5 @@
 // manipulando html con dom y api 
 
-// variables para página principal
-
-const apiKey = "2bfe34db0d27d97661602c0ccc0e3df3"
-
-const formMovie = document.querySelector("#search-btn")
-const inputSearch = document.querySelector(".search-control")
-
-const movieContainer = document.querySelector("#my-movies")
-const seriesContainer = document.querySelector("#my-series")
-
 //fetch a peliculas populares
 
 const moviesToHtml = (array) => {

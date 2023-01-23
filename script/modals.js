@@ -1,3 +1,20 @@
+//modales con sweet alert
+
+// formulario de contacto
+
+contactForm.onsubmit = (event) =>{
+    event.preventDefault()
+    Swal.fire({
+        title: "Sent!",
+        text: "Our team will read your message and start working on it ASAP",
+        icon: "success",
+        button: "Done",
+    });
+    contactForm.reset()
+}
+
+//random pick movie
+
 // random pick
 
 // funcion
@@ -6,10 +23,6 @@ const pickForMe = (array)=>{
     let randomPosition = Math.ceil(Math.random()*array.length)
     return array[randomPosition]
 }
-
-// constructor
-
-const random = document.querySelector("#random")
 
 // fetch a API. Ejecución de funcion. Modal de swwet alert con el resultado 
 
@@ -28,7 +41,3 @@ fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-
     }
 })
 .catch (error => console.log("ERROR!"))
-
-// swal - sweet alert
-
-

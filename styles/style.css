@@ -85,12 +85,20 @@ footer {
 footer .f-flex {
   padding: 3%;
   width: 50%;
+<<<<<<< HEAD
+=======
+  align-content: center;
+>>>>>>> 06b4886ad252463add7288c531402d67026b95b4
 }
 footer .f-flex p {
   line-height: 200%;
   font-weight: bold;
 }
+<<<<<<< HEAD
 footer .f-flex a img {
+=======
+footer .f-flex img {
+>>>>>>> 06b4886ad252463add7288c531402d67026b95b4
   width: 5%;
 }
 
