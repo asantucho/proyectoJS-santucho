@@ -52,7 +52,16 @@ footer {
     flex-direction: row;
     margin-top: 5%;
     .f-flex{
-        font-family: Arial, Helvetica, sans-serif;
-        padding: 3%
+        padding: 3%;
+        width: 50%;
+        p {
+            line-height: 200%;
+            font-weight: bold;
+        }
+        a{
+            img{
+                width: 5%;
+            }
+        }
     }
 }
