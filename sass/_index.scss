@@ -1,4 +1,4 @@
-/*main content*/
+/*main content- web container - home*/
 
 main{
     .web-container{
@@ -58,9 +58,13 @@ footer {
             line-height: 200%;
             font-weight: bold;
         }
-        a{
-            img{
-                width: 5%;
+        .social{
+            a{
+                img{
+                    width: 4%;
+                    margin: 0.5%;
+                    padding: 0.5%;
+                }
             }
         }
     }
